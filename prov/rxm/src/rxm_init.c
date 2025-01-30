@@ -37,6 +37,7 @@
 #include <ofi_net.h>
 
 #include <ofi_prov.h>
+#include <stdio.h>
 #include "rxm.h"
 
 #define RXM_ATOMIC_UNSUPPORTED_MSG_ORDER (FI_ORDER_RAW | FI_ORDER_RAR |  \
@@ -311,6 +312,8 @@ rxm_info_thru_rxm(uint32_t version, const struct fi_info *core_info,
 int rxm_info_to_rxm(uint32_t version, const struct fi_info *core_info,
 		    const struct fi_info *base_info, struct fi_info *info)
 {
+	printf("core_prov=%s base_info=%lu core_info=%lu\n", core_info->fabric_attr->prov_name, base_info->tx_attr->iov_limit, core_info->tx_attr->iov_limit);
+
 	if (rxm_passthru_info(base_info))
 		return rxm_info_thru_rxm(version, core_info, base_info, info);
 

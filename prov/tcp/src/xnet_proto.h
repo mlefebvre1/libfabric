@@ -81,7 +81,7 @@ struct xnet_cm_msg {
 #define XNET_HDR_VERSION	3
 
 enum {
-	XNET_IOV_LIMIT = 4
+	XNET_IOV_LIMIT = 16
 };
 
 /* base_hdr::op_data */
