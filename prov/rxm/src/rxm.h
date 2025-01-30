@@ -125,7 +125,7 @@ extern size_t rxm_packet_size;
 #define RXM_SAR_TX_ERROR	UINT64_MAX
 #define RXM_SAR_RX_INIT		UINT64_MAX
 
-#define RXM_IOV_LIMIT 4
+#define RXM_IOV_LIMIT 16
 
 #define RXM_PEER_XFER_TAG_FLAG	(1ULL << 63)
 
